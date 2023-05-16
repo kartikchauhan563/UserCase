@@ -1,0 +1,36 @@
+<template>
+    <!-- create folder card -->
+    <lightning-card  variant="Narrow" id="RelatedOpportunity"  title={cardTitle}  class="cardSpinner" icon-name="standard:contact">
+        <!-- loader -->
+        
+        <!-----/loader-------->
+        <div class="slds-var-p-around_small ">
+            <template if:true={hasData}>
+                <div class="slds-scrollable--y" style="max-height: 200px;">
+                <c-l-w-c-custom-datatable-type
+                class="slds-scrollable--y"
+                    key-field="Id"
+                    data={data} 
+                    columns={columns} 
+                    draft-values={draftValues} 
+                    oncellchange={handleCellChange}
+                    onsave={handleSave}
+                    oncancel={handleCancel}
+                    onrowselection={handleRowSelected}
+                    selected-rows={selection}
+                    max-row-selection="1"
+                    >
+                </c-l-w-c-custom-datatable-type>
+            </div>
+            </template>
+            <template if:false={hasData}>
+                <div class="slds-text-align--center">
+                  <img src={noRecordImageUrl} alt="No records found" />
+                  <div>No records found.</div>
+                </div>
+            </template>
+        </div>
+     
+    </lightning-card>
+    
+</template>

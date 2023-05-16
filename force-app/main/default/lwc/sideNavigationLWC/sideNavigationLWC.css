@@ -1,0 +1,75 @@
+.sidebar{
+    height:95vh;
+}
+.sidebar-button{    
+    width: 12px;
+}
+.open-panel {
+    width: 98%;
+    overflow:hidden;
+    transition: 0.3s;
+
+    margin-top: -344px
+
+}
+.close-panel {
+    width: 0px;
+    min-width: 0px;
+    overflow:unset;
+    transition: 0.3s;
+
+    margin-top: -344px
+}
+.expand-panel{
+    width: 99.5%;
+    transition: 0.3s;
+}
+.collapse-panel{
+    width: 82.5%;
+    transition: 0.3s;
+}
+.page-section {
+    border: solid 1px #ccc;
+    padding: .25rem;
+    background-color: #fff;
+}
+
+.refreshRotate {
+    animation: rotate .4s;
+}
+
+.OpportunityRelatedCardText{
+    font-size: 1rem;
+}
+
+li:hover {
+    cursor: pointer;
+    background-color: white;
+}
+
+
+.slds-split-view__toggle-button{
+    right: 0.25rem;
+}
+  
+  .slds-input-has-icon_right .slds-input__icon {
+    top: 30px !important; /* Adjust the top value as needed */
+   
+  }
+
+  .opportunityText{
+    font-size: 1.125rem;
+    font-weight: 700;
+    line-height:1.25;
+    display: block;
+    color: black;
+    place-self: center;
+    margin-left: 10px;
+  }
+
+  .opportunityRecordIcon{
+  
+        background: slateblue;
+        border-radius: 7px;
+
+  }

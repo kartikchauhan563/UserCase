@@ -1,0 +1,12 @@
+<template>
+    <lightning-card title="Create Record" icon-name="standard:contact">
+        <div class="slds-m-around_medium">
+            <lightning-input type="text" label="Opportunity Name" onchange={handleOppName} class="slds-m-bottom_x-small"></lightning-input>
+            <lightning-input type="Date" label="Close Date" onchange={handleOppCloseDate} class="slds-m-bottom_x-small"></lightning-input>
+            <lightning-combobox label="Stage" options={opportunityStageOptions} class="slds-m-bottom_x-small" onchange={handleStage}></lightning-combobox>
+            
+                <lightning-button label="Create Opportunity" disabled={isDisabled} variant="brand" onclick={createOpportunity}></lightning-button>
+       
+        </div>
+    </lightning-card>
+</template>

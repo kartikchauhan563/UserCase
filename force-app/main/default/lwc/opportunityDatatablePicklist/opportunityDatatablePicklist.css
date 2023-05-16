@@ -1,0 +1,8 @@
+.cardSpinner{
+    position: relative;;
+}
+
+.slds-table .slds-row-number:after {
+    content: counter(row-number);
+    display: none !important;
+}

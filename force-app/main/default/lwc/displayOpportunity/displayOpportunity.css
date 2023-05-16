@@ -1,0 +1,9 @@
+.THIS.container { 
+    max-height: 100vh; 
+    display: flex; 
+    height: calc(100% - 100px); width: 100% 
+} 
+
+.THIS .scroll-y { 
+    overflow-y: auto; 
+}

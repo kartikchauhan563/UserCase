@@ -1,0 +1,39 @@
+<template>
+    <lightning-card title="All The Opportunity Stage" icon-name="standard:opportunity">
+        <template if:true={info}>
+            <div class="slds-var-m-around_medium">
+            
+                <h1><strong>
+                 List Of Opp Stage!
+                </strong></h1>
+                <br/>
+                    <template for:each={map} for:item="stage">
+                        <tr key={stage.key}>
+                            <th scope="col">
+                                <div>
+                                    {stage.key} 
+                                </div>
+                            </th>
+                            <th scope="col">
+                                <div>
+                              -  (<strong>{stage.value}</strong>)
+                                </div>
+                            </th>
+                 
+                        </tr>
+                    </template>                   
+            </div>
+        </template>
+        <template if:false={info}>
+            <img src={imageUrl} alt="No Data Available"/>
+            <div class="slds-text-align_center">
+                <h2>NO OPPORTUNITY STAGE FOUND</h2>
+            </div>
+        </template>
+    </lightning-card>
+
+
+    
+
+
+</template>

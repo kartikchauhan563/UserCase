@@ -1,0 +1,21 @@
+<template>
+    <lightning-card title="Usecase_2" icon-name="standard:account">
+        <div class="slds-grid slds-wrap">
+            <div class="slds-size_1-of-2 slds-p-horizontal_x-small">
+                <lightning-combobox label="Select an Account"
+                                    value={selectedAccountId}
+                                    options={accountOptions}
+                                    onchange={handleAccountChange}>
+                </lightning-combobox>
+            </div>
+            <div class="slds-size_1-of-2 slds-p-horizontal_x-small">
+                <lightning-combobox label="Select a Contact"
+                                    value={selectedContactId}
+                                    options={contactOptions}
+                                    onchange={handleContactChange}
+                                    disabled={isContactPickerDisabled}>
+                </lightning-combobox>
+            </div>
+        </div>
+    </lightning-card>
+</template>

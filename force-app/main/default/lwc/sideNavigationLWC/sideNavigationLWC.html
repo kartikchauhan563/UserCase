@@ -1,0 +1,75 @@
+<template>
+    <div class="sidebar slds-split-view_container slds-is-closed close-panel" data-my-id="leftPanel"
+        style="float: left">
+        <lightning-button-icon onclick={togglePanel} variant="bare" icon-name="utility:left"
+            class="slds-button slds-button_icon slds-button_icon slds-split-view__toggle-button sidebar-button"
+            aria-controls="split-view-id" aria-expanded="true">
+        </lightning-button-icon>
+        <article aria-hidden="false" id="split-view-id" class="slds-split-view slds-grid slds-grid_vertical slds-grow"
+            style="padding-right: 7px">
+            <lightning-layout class="slds-m-around_medium">
+                <lightning-layout-item size="1">
+                    <!-- <lightning-icon class="oppoicon slds-icon" icon-name="utility:opportunity" size="small"
+                        alternative-text="Opportunity">
+                    </lightning-icon> -->
+                    <img class="opportunityRecordIcon" src="https://persistent-2ef-dev-ed.develop.my.salesforce.com/img/icon/t4v35/standard/account_120.png" alt="">
+                </lightning-layout-item>
+                <lightning-layout-item size="11">
+                    <div class="opportunityText">
+                        Opportunity Records
+                    </div>
+                </lightning-layout-item>
+            </lightning-layout>
+            <div class="slds-m-left_medium">
+                <lightning-layout>
+                    <template if:true={totalOpportunity}>
+                        <p>{totalOpportunity} items.</p>
+                    </template>
+                </lightning-layout>
+             
+
+            </div>
+
+            <lightning-layout class="slds-m-left_medium slds-m-right_medium">
+                <lightning-layout-item size="12">
+                    <div class="slds-input-has-icon slds-input-has-icon_right">
+                        <lightning-input type="text" placeholder="Search Opportunity" value={searchKey}
+                            onchange={handelSearchKey}></lightning-input>
+                        <lightning-icon icon-name="utility:search" size="small"
+                            class="slds-icon slds-input__icon slds-icon-text-default" alternative-text="Search">
+                        </lightning-icon>
+                    </div>
+                </lightning-layout-item>
+            </lightning-layout>
+
+
+
+
+            <div class="slds-split-view__list-header slds-p-left_none test-header slds-m-top_small">
+                <!--render facet: 569:0--><span class="slds-assistive-text" data-aura-rendered-by="570:0">Sorted
+                    by:</span><span title="Recently Viewed"
+                    class="slds-var-p-left_large test-title slds-p-right--x-small"
+                    data-aura-rendered-by="572:0">Recently Opportunity</span>
+
+            </div>
+
+
+
+
+            <lightning-layout class="">
+                <div class="slds-scrollable_y" tabindex="0" style="width:100%; height: 500px;">
+                    <ul class="slds-has-dividers_top-space">
+                        <template for:each={newData} for:item="opp">
+                            <li class="slds-item slds-m-left_small" data-id={opp.Id} key={opp.Id}
+                                onclick={handleItemClick}>
+                                {opp.Name}
+                            </li>
+                        </template>
+
+                    </ul>
+                </div>
+            </lightning-layout>
+        </article>
+    </div>
+
+</template>

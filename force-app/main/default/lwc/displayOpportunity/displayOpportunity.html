@@ -1,0 +1,28 @@
+<template>
+ <div>
+    
+    <lightning-card  title="DISPLAY OPPORTUNITY" icon-name="standard:opportunity">
+        <div  class="slds-var-m-around_medium">
+            <template if:true={OpportunityId}>
+                <lightning-record-form
+                record-id={OpportunityId}
+                
+                object-api-name={objectApiName}
+                layout-type="full"
+                columns="2"
+                mode="edit"
+                onsuccess={handleSuccess}></lightning-record-form>
+            </template>
+           <template if:false={OpportunityId}>
+            <img src={imageUrl} alt="No Data Available"/>
+            <div class="slds-text-align_center">
+                <h2> NO OPPORTUNITY FOUND</h2>
+            </div>
+           
+           </template>
+          
+        </div>
+    </lightning-card>
+ </div>
+
+</template>

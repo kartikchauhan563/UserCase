@@ -1,0 +1,35 @@
+<template>
+    <lightning-layout multiple-rows="true" data-id="callDetailsForm">
+        <lightning-layout-item size="12" padding="around-small">
+            <!-- <div style="height: 270px; overflow-y: scroll;">
+                <lightning-datatable data-id="templateId" key-field="templateId" data={lstEmailTemplates}
+                    columns={emailTemplateColumns} onrowaction={callRowAction} onrowselection={enableSendEmailButtton}
+                    max-row-selection="1">
+                </lightning-datatable>
+            </div> -->
+        </lightning-layout-item>
+        <lightning-layout-item size="12" padding="around-small" alignment-bump="right" class="slds-text-align_right">
+            <lightning-layout>
+                <span>{attachmentList}</span>
+                <lightning-button variant="brand" data-id="emailAttachment" class="slds-p-around_small " label="Attachment" title="Attachment"
+                    disabled={sendEmailDisabled} onclick={emailAttachment}>
+                </lightning-button>
+                <input type="file" name="test" class="slds-var-m-top_small" />
+                <!-- <lightning-file-upload
+                class="slds-p-around_small"
+                 label="Attach receipt"
+                 name="fileUploader"
+                 accept={acceptedFormats}
+                 record-id={recordId}
+                 onuploadfinished={handleUploadFinished}
+                 multiple>
+                 </lightning-file-upload> -->
+                <lightning-button variant="brand" class="slds-p-around_small " data-id="sendEmail" label="Send Email" title="Send Email"
+                    disabled={sendEmailDisabled} onclick={sendEmail}>
+                </lightning-button>
+            </lightning-layout>
+
+        </lightning-layout-item>
+
+    </lightning-layout>
+</template>
