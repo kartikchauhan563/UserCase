@@ -19,7 +19,7 @@ public with sharing class FetchOpportunity {
     public static List<Opportunity> getOpportunitiesByAccountId (String accountId)
     {
         //return [SELECT Id, Name,StageName, CloseDate FROM Opportunity WHERE AccountId = :selectedAccountId WITH SECURITY_ENFORCED ORDER  BY LastModifiedDate DESC LIMIT 10];
-        return [SELECT Id, Name, StageName, Amount, CloseDate FROM Opportunity WHERE AccountId = :accountId WITH SECURITY_ENFORCED ORDER BY LastModifiedDate DESC];
+        return [SELECT Id, Name, StageName, Amount, CloseDate,AccountId FROM Opportunity WHERE AccountId = :accountId WITH SECURITY_ENFORCED ORDER BY LastModifiedDate DESC];
     }
     @auraEnabled(cacheable=true)
     /*******************************************************************************************

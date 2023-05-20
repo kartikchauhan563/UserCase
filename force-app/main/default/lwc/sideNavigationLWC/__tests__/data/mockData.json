@@ -1,0 +1,12 @@
+[
+  {"Name":"abc", "stageName": "Prospecting", "count": 25 },
+  {"Name":"test", "stageName": "Qualification", "count": 2 },
+  {"Name":"apple", "stageName": "Needs Analysis", "count": 1 },
+  {"Name":"samsung", "stageName": "Value Proposition", "count": 0 },
+  {"Name":"lenovo", "stageName": "Id. Decision Makers", "count": 2 },
+  {"Name":"dell", "stageName": "Perception Analysis", "count": 0 },
+  {"Name":"HP", "stageName": "Proposal/Price Quote", "count": 0 },
+  {"Name":"salesforce", "stageName": "Negotiation/Review", "count": 0 },
+  {"Name":"servicenow", "stageName": "Closed Won", "count": 2 },
+  {"Name":"ford", "stageName": "Closed Lost", "count": 0 }
+]

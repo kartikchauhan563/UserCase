@@ -3,7 +3,6 @@ import fetchOpportunity from '@salesforce/apex/FetchOpportunity.getOpportunities
 import { refreshApex } from '@salesforce/apex'
 import ACCOUNT_CHANNEL from '@salesforce/messageChannel/Account_Channel__c';
 import OPPORTUNITY_CHANNEL from '@salesforce/messageChannel/Opportunity_Channel__c';
-import searchOpportunity from '@salesforce/apex/FetchOpportunity.getOpportunityDataforSearch';
 //realtime data fetch
 import { subscribe, MessageContext,APPLICATION_SCOPE,unsubscribe,publish } from 'lightning/messageService';
 import CONTACT_CREATED_CHANNEL from "@salesforce/messageChannel/MyMessageChannel__c";
@@ -21,6 +20,7 @@ export default class SideNavigationLWC extends LightningElement {
     selectedOpportunityId
     @track totalOpportunity='';
     newData;
+    tileData;
     //search variable
     searchKey;
     //collapse Navigation Pannel Code
@@ -64,6 +64,7 @@ export default class SideNavigationLWC extends LightningElement {
     wiredopportunityData (result) {
         
       this.opportunityData = result
+      console.log(this.opportunityData);
       if (result.data) {
         if (this.data) {
           this.data = JSON.parse(JSON.stringify(result.data));
@@ -74,7 +75,6 @@ export default class SideNavigationLWC extends LightningElement {
         this.data = undefined
       }
     }
-    
     handelSearchKey(event) {
         const searchKey = event.target.value.toLowerCase();
         if(searchKey===''){
@@ -142,6 +142,3 @@ export default class SideNavigationLWC extends LightningElement {
         
     }
 }
-
-
-
